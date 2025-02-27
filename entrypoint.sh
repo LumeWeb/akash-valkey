@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-if -f /akash-cfg/etcd.env; then
+if [ -f /akash-cfg/etcd.env ]; then
   set -a
   source /akash-cfg/config.env
   set +a
