@@ -1,6 +1,12 @@
 #!/bin/sh
 set -e
 
+if -f /akash-cfg/etcd.env; then
+  set -a
+  source /akash-cfg/config.env
+  set +a
+fi
+
 # Generate Valkey config file
 CONFIG_FILE="/usr/local/etc/valkey/valkey.conf"
 mkdir -p "$(dirname "$CONFIG_FILE")"
